@@ -12,7 +12,7 @@ export class MembersService {
     ) { }
 
     async showAll(){
-        return await this.membersRepository.find();
+        return await this.membersRepository.find({ relations: ['books'] });
     }
 
     async create (data: MembersDTO){
